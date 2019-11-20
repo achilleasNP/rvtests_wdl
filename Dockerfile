@@ -21,12 +21,20 @@ RUN useradd --system \
             --uid 1000 \
             debian
 
+# INSTALL rvtests under opt
+WORKDIR /opt
+RUN git clone https://github.com/zhanxw/rvtests && cd rvtests && git checkout v2.1.0 && make
+
+## Set permissions  
+RUN chmod o+rx rvtests rvtests/executable
+WORKDIR /opt/rvtests/executable
+RUN find .| grep -v '\.d' | xargs -I{} chmod o+rx '{}'   
+
+
 # Do rvtests installation as user debian
 USER debian
 WORKDIR /home/debian
-RUN git clone https://github.com/zhanxw/rvtests && cd rvtests && git checkout v2.1.0 && make
 
 # Add executables to PATH
-ENV PATH="${PATH}:/home/debian/rvtests/executable/"
-WORKDIR /home/debian
+ENV PATH="${PATH}:/opt/rvtests/executable"
 CMD "/bin/bash"
