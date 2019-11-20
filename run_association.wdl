@@ -44,17 +44,17 @@ task rvtests {
                 ${ "--peopleIncludeFile" + peopleIncludeFile } \
                 --freqUpper ${freqUpper} \
                 --freqLower ${freqLower} \
-                ${ "--rangeFile" + rangeFile } \
-                ${ "--siteFile" +  siteFile } \
-                ${ "--siteMACMin" +  siteMACMin } \
-                ${ "--annoType" +  annoType } \
-                ${ "--impute" +  impute } \
+                ${ "--rangeFile " + rangeFile } \
+                ${ "--siteFile " +  siteFile } \
+                ${ "--siteMACMin " +  siteMACMin } \
+                ${ "--annoType " +  annoType } \
+                ${ "--impute " +  impute } \
 		if ${default=false imputePheno} then "--imputePheno" else "" \
-                ${ "--geneFile" +  geneFile } \
+                ${ "--geneFile " +  geneFile } \
                 if defined genes then "--gene " + ${sep="," genes} else "" \
-                ${ "--setFile" +  setFile } \
+                ${ "--setFile " +  setFile } \
                 if defined setList then "--set " + ${sep="," set} else "" \
-                ${ "--kinship" +  kinship } 
+                ${ "--kinship " +  kinship } 
        }
 }
  
