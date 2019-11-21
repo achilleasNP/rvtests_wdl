@@ -56,6 +56,15 @@ task rvtests {
                 if defined setList then "--set " + ${sep="," set} else "" \
                 ${ "--kinship " +  kinship } 
        }
+
+     output {
+       Array[File] outputs = glob( "${prefix}*" )
+     }
+
+     runtime {
+       docker: "quay.io/achilleasnp/rvtests:v0.0.1"
+    }
+
 }
  
 workflow association {
