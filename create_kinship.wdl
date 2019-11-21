@@ -1,15 +1,13 @@
 task vcf2kinship  {
        File inputVcf
-       File? pedigreeFile
+       String outputPrefix
        Boolean useBaldingNicols 
        Boolean useIBS
-       String outputPrefix
- 
+
        command  {
-            vcf2kinship --inVCF ${inputVcf} \
+            vcf2kinship  --inVcf ${inputVcf} \
              ${true="--bn" false="" useBaldingNicols} \
              ${true='--ibs' false=""  useIBS} \
-             if defined pedigreeFile then "--pedigree " + pedigreeFile \
              --out ${outputPrefix} 
         }
      output {
