@@ -15,7 +15,16 @@ task vcf2kinship  {
      output {
        Array[File] outputs = glob( "${outputPrefix}*" )
      }
-        
+
+     runtime {
+       docker: "quay.io/achilleasnp/rvtests:v0.0.1"
+    }
+
+    meta {
+        author: "Achilleas Pitsillides"
+        email: "anp4r at bu.edu"
+        description: "## vcf2kinship \n # Workflow to generate kinship matrix for use with rvtests. \n"
+    }       
 }
 
 workflow calculateKinship {
@@ -23,3 +32,4 @@ workflow calculateKinship {
 
 }
 
+ 
