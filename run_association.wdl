@@ -4,6 +4,9 @@ task rvtests {
       File? covarFile
       Boolean? inverseNormal
       Boolean? useResidualAsPhenotype
+      Boolean? xHemi
+      String? xLabel
+      String? xParRegion
       String phenoName
       String prefix
       Array[String]? covarsMaybe
@@ -45,8 +48,11 @@ task rvtests {
 	        --pheno ${phenoFile} \
 		--pheno-name ${phenoName} \
 		${"--covar " + covarFile } \
+		${"--xLabel " + xLabel } \
+		${"--xParRegion " + xParRegion } \
 		${true="--inverseNormal" false="" inverseNormal} \
 		${true="--useResidualAsPhenotype" false="" useResidualAsPhenotype} \
+                ${true="--xHemi" false="" xHemi }\
                 ${covarsPrefix} ${sep="," covarsMaybe} \
                 ${singlePrefix} ${sep="," singleTestsMaybe} \
                 ${burdenPrefix} ${sep="," burdenTestsMaybe} \
