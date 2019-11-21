@@ -77,6 +77,12 @@ task rvtests {
        docker: "quay.io/achilleasnp/rvtests:v0.0.1"
     }
 
+    meta { 
+        author: "Achilleas Pitsillides"
+        email: "anp4r at bu.edu"
+        description: "## rvtest \n # Workflow to run association with [rvtests](https://github.com/zhanxw/rvtests) \n"
+    }       
+
 }
  
 workflow association {
