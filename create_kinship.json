@@ -1,7 +1,9 @@
 {
-  "calculateKinship.vcf2kinship.useBaldingNicols": true,
-  "calculateKinship.vcf2kinship.useIBS": false,
-  "calculateKinship.vcf2kinship.outputPrefix": "myKinship",
-  "calculateKinship.vcf2kinship.inputVcf": "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr21.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz"
+  "calculateKinship.vcf2kinship.useBaldingNicols": "Boolean",
+  "calculateKinship.vcf2kinship.useIBS": "Boolean",
+  "calculateKinship.vcf2kinship.outputPrefix": "String",
+  "calculateKinship.vcf2kinship.xHemi": "Boolean? (optional)",
+  "calculateKinship.vcf2kinship.inputVcf": "File? (optional)",
+  "calculateKinship.vcf2kinship.pedfile": "File? (optional)"
 }
 

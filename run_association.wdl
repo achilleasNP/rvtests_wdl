@@ -4,10 +4,16 @@ task rvtests {
       File? covarFile
       Boolean? inverseNormal
       Boolean? useResidualAsPhenotype
+      Boolean? outputRaw
+      Boolean? sex
+      Boolean? qtl
+      Boolean? multipleAllele
       Boolean? xHemi
       String? xLabel
       String? xParRegion
-      String phenoName
+      String? dosage
+      String? phenoName
+      Int? mpheno
       String prefix
       Array[String]? covarsMaybe
       Array[String]? singleTestsMaybe
@@ -25,31 +31,46 @@ task rvtests {
 
 
       File? peopleIncludeFile
-      Float freqUpper
-      Float freqLower
+      Float? freqUpper
+      Float? freqLower
       File? rangeFile
       File? siteFile
+      String? site
       Int? siteMACMin
+      Int ?siteDepthMin 
+      Int ?siteDepthMax
       String? annoType
       String? impute
       Boolean? imputePheno
       File? geneFile
       Array[String]? genes
       String genesPrefix = if defined(genes) then "--genes " else "" 
-
       File? setFile
-      File? kinship
       Array[String]? set
       String setPrefix = if defined(set) then "--set " else "" 
       
+      File? kinship
+      File? xHemiKinship 
+      File? kinshipEigen
+      File? xHemiKinshipEigen 
+      Boolean? hideCovar
+      Int? numThread 
+      Boolean? outputID     
+ 
       command {
          rvtest --inVcf ${inVCF} \
 	        --out ${prefix} \
 	        --pheno ${phenoFile} \
-		--pheno-name ${phenoName} \
+		${"--pheno-name " + phenoName} \
+		${"--mpheno " + mpheno} \
 		${"--covar " + covarFile } \
 		${"--xLabel " + xLabel } \
 		${"--xParRegion " + xParRegion } \
+		${"--dosage " + dosage } \
+		${true="--outputRaw" false="" outputRaw} \
+		${true="--sex" false="" sex} \
+		${true="--qtl" false="" qtl} \
+		${true="--multipleAllele" false="" multipleAllele} \
 		${true="--inverseNormal" false="" inverseNormal} \
 		${true="--useResidualAsPhenotype" false="" useResidualAsPhenotype} \
                 ${true="--xHemi" false="" xHemi }\
@@ -59,12 +80,14 @@ task rvtests {
                 ${vtPrefix} ${sep="," vtTestsMaybe} \
                 ${kernelPrefix} ${sep="," kernelTestsMaybe} \
                 ${metaPrefix} ${sep="," metaTestsMaybe} \
-                ${ "--peopleIncludeFile" + peopleIncludeFile } \
-                --freqUpper ${freqUpper} \
-                --freqLower ${freqLower} \
+                ${ "--peopleIncludeFile " + peopleIncludeFile } \
+                ${ "--freqUpper " + freqUpper} \
+                ${ "--freqLower " + freqLower} \
                 ${ "--rangeFile " + rangeFile } \
                 ${ "--siteFile " +  siteFile } \
                 ${ "--siteMACMin " +  siteMACMin } \
+                ${ "--siteDepthMin " +  siteDepthMin } \
+                ${ "--siteDepthMax " +  siteDepthMax } \
                 ${ "--annoType " +  annoType } \
                 ${ "--impute " +  impute } \
                 ${true="--imputePheno" false="" imputePheno} \
@@ -72,8 +95,14 @@ task rvtests {
                 ${genesPrefix} ${sep="," genes} \
                 ${ "--setFile " +  setFile } \
                 ${setPrefix} ${sep="," set} \
-                ${ "--kinship " +  kinship } 
-       }
+                ${ "--kinship " +  kinship } \
+                ${ "--xHemiKinship " +  xHemiKinship } \
+                ${ "--kinshipEigen " +  kinshipEigen } \
+                ${ "--xHemiKinshipEigen " +  xHemiKinshipEigen } \
+		${true="--hide-covar" false="" hideCovar} \
+		${true="--outputID" false="" outputID} \
+                ${"--numThread " + numThread }
+     }
 
      output {
        Array[File] outputs = glob( "${prefix}*" )

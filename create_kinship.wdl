@@ -8,9 +8,9 @@ task vcf2kinship  {
 
        command  {
             vcf2kinship  ${"--inVcf " + inputVcf} \
-             ${"--ped" + pedfile} \
+             ${"--ped " + pedfile} \
              ${true="--bn" false="" useBaldingNicols} \
-             ${true='--ibs' false=""  useIBS} \
+             ${true="--ibs" false=""  useIBS} \
              ${true="--xHemi" false="" xHemi} \
              --out ${outputPrefix} 
         }
