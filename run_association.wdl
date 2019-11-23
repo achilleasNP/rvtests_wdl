@@ -109,7 +109,7 @@ task rvtests {
      }
 
      runtime {
-       docker: "quay.io/achilleasnp/rvtests:0.0.2"
+       docker: "quay.io/achilleasnp/rvtests:v0.0.2"
     }
 
     meta { 
