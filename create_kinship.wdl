@@ -1,13 +1,17 @@
 task vcf2kinship  {
-       File inputVcf
+       File? inputVcf
+       File? pedfile
+       Boolean? xHemi
        String outputPrefix
        Boolean useBaldingNicols 
        Boolean useIBS
 
        command  {
-            vcf2kinship  --inVcf ${inputVcf} \
+            vcf2kinship  ${"--inVcf " + inputVcf} \
+             ${"--ped" + pedfile} \
              ${true="--bn" false="" useBaldingNicols} \
              ${true='--ibs' false=""  useIBS} \
+             ${true="--xHemi" false="" xHemi} \
              --out ${outputPrefix} 
         }
      output {
