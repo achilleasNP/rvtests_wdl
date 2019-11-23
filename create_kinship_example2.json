@@ -1,0 +1,7 @@
+{
+  "calculateKinship.vcf2kinship.inputVcf": "https://github.com/zhanxw/rvtests/raw/master/example/example.vcf.gz",
+  "calculateKinship.vcf2kinship.useBaldingNicols": true,
+  "calculateKinship.vcf2kinship.useIBS": false,
+  "calculateKinship.vcf2kinship.outputPrefix": "out1"
+}
+

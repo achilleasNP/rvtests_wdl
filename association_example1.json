@@ -1,0 +1,7 @@
+{
+  "association.rvtests.phenoFile": "https://github.com/zhanxw/rvtests/raw/master/example/pheno",
+  "association.rvtests.prefix": "out1",
+  "association.rvtests.singleTestsMaybe": ["wald"],
+  "association.rvtests.inVCF": "https://github.com/zhanxw/rvtests/raw/master/example/example.vcf.gz"
+}
+

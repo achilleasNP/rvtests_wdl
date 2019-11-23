@@ -1,0 +1,7 @@
+{
+  "calculateKinship.vcf2kinship.useBaldingNicols": true,
+  "calculateKinship.vcf2kinship.useIBS": false,
+  "calculateKinship.vcf2kinship.outputPrefix": "out1",
+  "calculateKinship.vcf2kinship.pedfile": "https://github.com/zhanxw/rvtests/raw/master/example/pheno"
+}
+

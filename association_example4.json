@@ -1,0 +1,10 @@
+{
+  "association.rvtests.phenoFile": "https://github.com/zhanxw/rvtests/raw/master/example/pheno",
+  "association.rvtests.prefix": "out4",
+  "association.rvtests.singleTestsMaybe": ["wald"],
+  "association.rvtests.inVCF": "https://github.com/zhanxw/rvtests/raw/master/example/example.vcf.gz",
+  "association.rvtests.covarFile": "https://github.com/zhanxw/rvtests/raw/master/example/covar",
+  "association.rvtests.covarsMaybe": ["c1","c2"],
+  "association.rvtests.phenoName": "y3"
+}
+

@@ -1,0 +1,13 @@
+{
+  "association.rvtests.phenoFile": "https://github.com/zhanxw/rvtests/raw/master/example/pheno",
+  "association.rvtests.prefix": "out7",
+  "association.rvtests.metaTestsMaybe": ["score", "cov"],
+  "association.rvtests.inVCF": "https://github.com/zhanxw/rvtests/raw/master/example/example.vcf.gz",
+  "association.rvtests.covarFile": "https://github.com/zhanxw/rvtests/raw/master/example/covar",
+  "association.rvtests.kinship": "out1.kinship",
+  "association.rvtests.covarsMaybe": ["c1","c2"],
+  "association.rvtests.useResidualAsPhenotype": false,
+  "association.rvtests.inverseNormal": true,
+  "association.rvtests.phenoName": "y3"
+}
+
