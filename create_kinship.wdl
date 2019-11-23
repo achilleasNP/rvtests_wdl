@@ -19,7 +19,7 @@ task vcf2kinship  {
      }
 
      runtime {
-       docker: "quay.io/achilleasnp/rvtests:v0.0.1"
+       docker: "quay.io/achilleasnp/rvtests:0.0.2"
     }
 
     meta {
